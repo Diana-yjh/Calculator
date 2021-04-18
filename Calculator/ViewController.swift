@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     @IBAction func equalsTap(_ sender: Any) {
         if(validInput()){
             let checkedWorkingsForPercent = workings.replacingOccurrences(of: "%", with: "*0.01")
-            //        let expression = NSExpression(format:workings)
+            //let expression = NSExpression(format:workings)
+            //workings에 들어있는 문자열이 NSExpression을 거치면서 알아서 계산식으로 변환
             let expression = NSExpression(format:checkedWorkingsForPercent)
             let result = expression.expressionValue(with:nil, context: nil) as! Double
             let resultString = formatResult(result: result)
@@ -98,6 +99,9 @@ class ViewController: UIViewController {
             return true
         }
         if(char == "+"){
+            return true
+        }
+        if(char == "-"){
             return true
         }
         return false
