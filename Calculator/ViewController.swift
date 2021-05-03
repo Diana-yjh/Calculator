@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //AC 버튼
     func clearAll(){
         workings = ""
         calculatorWorkings.text = ""
